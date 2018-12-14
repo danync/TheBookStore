@@ -1,0 +1,71 @@
+<!--
+  Generated template for the LibroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding style = "background-color: #D9D9D9">
+    <img [src] = producto.imagen>
+
+    <ion-list>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="book" style = "color: #2F2F2F" item-start large></ion-icon>
+        <h3>{{producto.titulo}}</h3>
+      </ion-item>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="body"  style = "color: #2F2F2F" item-start large></ion-icon>
+        <h3>{{producto.autor}}</h3>
+      </ion-item>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="bookmarks" style = "color: #2F2F2F" item-start large></ion-icon>
+        <h3>{{producto.editorial}}</h3>
+      </ion-item>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="calendar" style = "color: #2F2F2F" item-start large></ion-icon>
+        <h3>{{producto.lanzamiento}}</h3>
+      </ion-item>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="albums" style = "color: #2F2F2F" item-start large></ion-icon>
+        <h3>{{producto.paginas}}</h3>
+      </ion-item>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="cash" style = "color: #2F2F2F" item-start large></ion-icon>
+        <h3>{{producto.precio}}</h3>
+      </ion-item>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="filing" style = "color: #2F2F2F" item-start large></ion-icon>
+        <h3>{{producto.disponibles}}</h3>
+      </ion-item>
+      <ion-item style = "background-color: #FFFFFF">
+        <ion-icon name="star" style = "color: #2F2F2F" *ngFor = "let p of producto.valoracion"></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+              <img [src] = producto.resenas.perfil>
+          </ion-avatar>
+          <h2>{{producto.resenas.nombre}}</h2>
+        </ion-item>
+        <ion-card-content>
+            {{producto.resenas.resena}}
+        </ion-card-content>
+    </ion-card>    
+
+    <p></p>
+
+    <button ion-button block color="dark" style = "border-radius: 5px" (click) = "agregar()">
+      <ion-icon name="cart" >Comprar</ion-icon>
+    </button>
+
+</ion-content>
+
